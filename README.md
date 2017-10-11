@@ -7,7 +7,7 @@ The library allows the execution of WCPS without the need to understand WCPS. Th
 
 ## Logging
 
-The Library uses the builtin logging from the Python standard libs. We do not initialise the logger with a handler, e.g. log file. This is up to the user of the library to define. This allows greater freedom for the user as they can setup any log handler they choose. An example of a minimum setup can be found in `example.py`
+The Library uses the builtin logging from the Python standard libs. We do not initialise the logger with a handler, e.g. log file. This is up to the user of the library to define. This allows greater freedom for the user as they can setup any log handler they choose. An example of a minimum setup can be found in `complex_query_example.py`
 
 ## Complex Example 
 

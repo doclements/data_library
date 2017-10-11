@@ -17,6 +17,10 @@ def web_post(url, payload):
    return requests.post(url, data=payload).text
 
 def web_post_file(url, payload):
+   # remove question mark from URL if given
+   url = url.replace('?','')
+   # remove newline characters from template query
+   payload['query'] = payload['query'].replace('\n', ' ')
    return requests.post(url, data=payload).content
 
 
