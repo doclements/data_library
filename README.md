@@ -6,7 +6,7 @@
 
 The library allows the execution of WCPS without the need to understand WCPS. The basic interactions are pre-coded but the library can also act as a framework to create re-usable python code for more complex WCPS queries. You can find an example below in the `Complex Example` section.  The basic flow of a query is :
  * initialise a `Service` object with the base URL of a WCPS endpoint.
-   * internally the library now issues a combination of GetCapabilities and DescirbeCoverage requests to get info about all coverages, this info is stored for future use using the md5 hash of the URL given
+   * internally the library now issues a combination of GetCapabilities and DescirbeCoverage requests to get info about all coverages, this info is stored for future, in the `configs` directory, use using the md5 hash of the URL given
  * The service object is then passed into which ever query type is desired
  * The coverage to be used in the query is also accessed by the Service object
  * The query is then sent to the service with data being marshalled into the appropriate format for further analysis or visualisation.  
