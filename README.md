@@ -1,5 +1,6 @@
 # EarthServer Data Abstraction Library    
 
+This library is intended to be utilised by data providers that make a WCPS endpoint available who also want to make tools available to thier users. This library makes the creation of those tools signifcantly easier. 
 
 
 ## Basic Info
