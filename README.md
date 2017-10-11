@@ -1,6 +1,7 @@
 # EarthServer Data Abstraction Library    
 
 
+
 ## Basic Info
 
 The library allows the execution of WCPS without the need to understand WCPS. The basic interactions are pre-coded but the library can also act as a framework to create re-usable python code for more complex WCPS queries. You can find an example below in the `Complex Example` section
@@ -16,3 +17,8 @@ The library can act as a framework for creating complex WCPS queries. As an exam
  * Create the WCPS template
  * Create a class that extends `Query`
  * Have that class run the WCPS query and attach output, formatted as you like, to the data attribute.
+
+
+ ## Dependencies
+
+  * OWSLib
