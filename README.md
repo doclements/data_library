@@ -21,4 +21,4 @@ The library can act as a framework for creating complex WCPS queries. As an exam
 
  ## Dependencies
 
-  * OWSLib
+  * OWSLib - [https://github.com/earthserver-eu/OWSLib/tree/olcl-wcs-200] branch from our repo until it is merged back into main library
