@@ -1,0 +1,68 @@
+could not convert string to float: ?xml version="1.0" encoding="UTF-8" standalone="yes"?> <ows:ExceptionReport version="2.0.1"     xsi:schemaLocation="http://www.opengis.net/ows/2.0 http://schemas.opengis.net/ows/2.0/owsExceptionReport
+
+for c in (frt0000a0ac_07_if165l_trr3)
+return
+encode (
+   c[N(562.6610837), E(298.2737483)], "csv"
+)
+
+could not convert string to float: ?xml version="1.0" encoding="UTF-8" standalone="yes"?> <ows:ExceptionReport version="2.0.1"     xsi:schemaLocation="http://www.opengis.net/ows/2.0 http://schemas.opengis.net/ows/2.0/owsExceptionReport
+
+for c in (frt0000a0ac_07_if165l_trr3)
+return
+encode (
+   c[N(562.6610837), E(298.2737483)], "csv"
+)
+
+could not convert string to float: ?xml version="1.0" encoding="UTF-8" standalone="yes"?> <ows:ExceptionReport version="2.0.1"     xsi:schemaLocation="http://www.opengis.net/ows/2.0 http://schemas.opengis.net/ows/2.0/owsExceptionReport
+
+for c in (frt0000a0ac_07_if165l_trr3)
+return
+encode (
+   c[N(562.6610837), E(298.2737483)], "csv"
+)
+
+could not convert string to float: ?xml version="1.0" encoding="UTF-8" standalone="yes"?> <ows:ExceptionReport version="2.0.1"     xsi:schemaLocation="http://www.opengis.net/ows/2.0 http://schemas.opengis.net/ows/2.0/owsExceptionReport
+
+for c in (frt0000a0ac_07_if165l_trr3)
+return 
+encode (
+   c[N(562.6610837), E(298.2737483)], "csv"
+)
+
+could not convert string to float: ?xml version="1.0" encoding="UTF-8" standalone="yes"?> <ows:ExceptionReport version="2.0.1"     xsi:schemaLocation="http://www.opengis.net/ows/2.0 http://schemas.opengis.net/ows/2.0/owsExceptionReport
+
+for c in (frt0000a0ac_07_if165l_trr3)
+return 
+encode (
+   c[N(562.6610837), E(298.2737483)], "csv"
+)
+
+invalid literal for float(): 65535 65535 0.2349021 0.2358462 0.2338952 0.2347697 0.2344843 0.2341177 0.2358274 0.2352535 0.2349456 0.237055 0.2361914 0.2369279 0.2388053 0.2404118 0.2411811 0.2419505 0.2423404 0.243548 0.2445395 
+
+for c in (frt0000a0ac_07_if165l_trr3)
+return 
+encode (
+   c[N(562.6610837), E(298.2737483)], "csv"
+)
+
+<type 'exceptions.ValueError'>
+
+for c in (frt0000a0ac_07_if165l_trr3)
+return 
+encode (
+   c[N(562.6610837), E(298.2737483)], "csv"
+)
+
+trying to marshal result into array
+trying to marshal result into array
+<type 'exceptions.ValueError'>
+
+for c in (OCCCI_V3_monthly_chlor_a)
+return
+encode (
+   c[Lat(55), Long(-40), ansi("2006-06-01T00:00:00Z")], "csv"
+)
+
+trying to marshal result into array
+trying to marshal result into array due to invalid literal for float(): 65535 65535 0.2349021 0.2358462 0.2338952 0.2347697 0.2344843 0.2341177 0.2358274 0.2352535 0.2349456 0.237055 0.2361914 0.2369279 0.2388053 0.2404118 0.2411811 0.2419505 0.2423404 0.243548 0.2445395 
