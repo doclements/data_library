@@ -66,14 +66,15 @@ _log.setLevel(logging.DEBUG)
 
 meeo_service = Service('https://eodataservice.org/rasdaman/ows')
 
+print meeo_service.coverages['L8_RGB_32636_30']
 
-meeo_area = Area(meeo_service, 4902991, 4917275, 377983, 390000, meeo_service.coverages['L8_B5_32631_30'],date="2015-05-31T10:34:57Z" )
-print meeo_area.data.shape
-print meeo_area.data
-print np.min(meeo_area.data)
-print np.max(meeo_area.data)
-plt.imshow(meeo_area.data)
-plt.show()
+# meeo_area = Area(meeo_service, 4902991, 4917275, 377983, 390000, meeo_service.coverages['L8_B5_32631_30'],date="2015-05-31T10:34:57Z" )
+# print meeo_area.data.shape
+# print meeo_area.data
+# print np.min(meeo_area.data)
+# print np.max(meeo_area.data)
+# plt.imshow(meeo_area.data)
+# plt.show()
 
 
 
