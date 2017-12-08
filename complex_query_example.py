@@ -54,3 +54,4 @@ im = Image.open(cStringIO.StringIO(meeo_area.data))
 im.show()
 # plt.imshow(meeo_area.data)
 # plt.show()
+

@@ -55,3 +55,15 @@ blue:  ( (b * 0.00002) - 0.1 ) * 255
 [{y_label}({south}:{north}), {x_label}({west}:{east}), {time_label}("{date}")]
 ,"png")
 """
+
+ndvi = """
+for R in (L8_B4_{swath_id}), NIR in (L8_B5_{swath_id})
+return 
+encode( (
+(
+    ( ((NIR*0.00002) - 0.1  ) - ( (R*0.00002) - 0.1 ) ) /
+    ( ((NIR*0.00002)  - 0.1 ) + ( (R*0.00002)  - 0.1 ) )
+)
+[{y_label}({south}:{north}), {x_label}({west}:{east}), {time_label}("{date}"))
+, "{output}")
+"""
