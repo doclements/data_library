@@ -30,7 +30,7 @@ class CustomQuery(Query):
 
     def _get_data(self):
         self.query = create_query(self)
-        #print self.query
+        print self.query
         if self.output == "csv":
             self.data = web_post(self.wcps_url, {"query":self.query})[1:-1]
             print self.data
