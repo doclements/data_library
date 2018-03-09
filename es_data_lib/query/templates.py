@@ -118,3 +118,12 @@ encode(
     
 """
 
+rrs_ratio = """
+for a in (OCCCI_V3_monthly_rrs_{band1}), b in (OCCCI_V3_monthly_rrs_{band2})
+return
+encode (
+
+((a[{y_label}({south}:{north}), {x_label}({west}:{east}), {time_label}("{date}")] < 100) * a[{y_label}({south}:{north}), {x_label}({west}:{east}), {time_label}("{date}")] ) / 
+((b[{y_label}({south}:{north}), {x_label}({west}:{east}), {time_label}("{date}")] < 100) * b[{y_label}({south}:{north}), {x_label}({west}:{east}), {time_label}("{date}")] )
+, "{output}", "nodata=9.96921e+36" )
+"""
