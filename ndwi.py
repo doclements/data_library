@@ -32,10 +32,8 @@ class NDWI(Query):
 
     def _get_data(self):
         self.query = create_query(self)
-        print self.query
         if self.output == "csv":
             self.data = web_post(self.wcps_url, {"query":self.query})[1:-1]
-            print self.data
         if self.output == "netcdf":
             self.data = web_post_file(self.wcps_url, {"query":self.query})
         if self.output == "gtiff":
@@ -61,4 +59,4 @@ with open("meeo_output.tif",'w') as output_file:
     output_file.write(meeo_area.data)
 
 
-Image.open( "/home/rsgadmin/data_library/meeo_output.tif" ).show()
+Image.open( "meeo_output.tif" ).show()

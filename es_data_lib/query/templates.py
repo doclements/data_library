@@ -77,7 +77,7 @@ encode( (
     255 * (NIR - SWIR) /
           (NIR + SWIR)
 )
-[E(377983:390000),N(4902991:4917275),unix(1433068497)] )
+[{y_label}({south}:{north}), {x_label}({west}:{east}), {time_label}("{date}")] )
 , "{output}")
 """
 
@@ -90,19 +90,19 @@ encode( (
     (NIR - SWIR) /
           (NIR + SWIR)
 )
-[E(377983:390000),N(4902991:4917275),unix(1433068497)] )
+[{y_label}({south}:{north}), {x_label}({west}:{east}), {time_label}("{date}")] )
 , "{output}")
 """
 
 l8_cloudmask = """
 for r in (L8_B6_{swath_id}), g in (L8_B5_{swath_id}), b in (L8_B4_{swath_id}), bq in (L8_BQA_{swath_id})
 return 
-encode ( {
+encode ( {{
 red:   ( (r*(bq < 24576) * 0.00002) - 0.1 ) * 255;
 green: ( (g*(bq < 24576) * 0.00002) - 0.1 ) * 255;
 blue:  ( (b*(bq < 24576) * 0.00002) - 0.1 ) * 255
-}
-[E(377983:390000),N(4902991:4917275),unix(1433068497)]
+}}
+[{y_label}({south}:{north}), {x_label}({west}:{east}), {time_label}("{date}")]
 ,"{output}")
 """
 
@@ -112,7 +112,9 @@ ecmwf_1 = """
 for c in (temp2m) 
 return 
 encode(
-    (condense + over 
-    $x x(imageCrsDomain(c[Lat(30.000000:50.000000), Long(5.000000:20.000000), ansi("2000-01-31T21:00":"2002-01-31T21:00")], ansi)) 
-    using c[ansi($x)]/4)-273.15, "csv")
+    (coverage rainfall over 
+    $x x(imageCrsDomain(c[{y_label}({south}:{north}), {x_label}({west}:{east}), {time_label}("{date1}":"{date2}")], ansi)) 
+    values( avg(c[{y_label}({south}:{north}), {x_label}({west}:{east}),ansi($x)] - 273.15)) ), "csv")
+    
 """
+

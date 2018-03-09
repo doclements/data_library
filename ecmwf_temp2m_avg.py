@@ -1,38 +1,39 @@
 
 import numpy as np
 from PIL import Image
+import matplotlib.pyplot as plt
 import cStringIO
 
-from es_data_lib.query.templates import landsat_rgb_area,ndvi
+from es_data_lib.query.templates import ecmwf_1
 from es_data_lib.utils import create_query, web_post, web_post_file
 from es_data_lib.query.query import Query
 from es_data_lib.service import Service
 
 
-class NDVI(Query):
-    def __init__(self, service, south, north, west, east, date, coverage_id, output="png"):
-        coverage = service.coverages['L8_B5_'+coverage_id]
-        super(NDVI, self).__init__(service, coverage)
+class Temp2MAvg(Query):
+    def __init__(self, service, south, north, west, east, date1, date2,  output="csv"):
+        coverage = service.coverages['temp2m']
+        super(Temp2MAvg, self).__init__(service, coverage)
         self.template_params = {
-            "swath_id": coverage_id,
             "south": south,
             "north": north,
             "west": west,
             "east": east,
-            "date": date,
+            "date1": date1,
+            "date2": date2,
             "time_label":self.coverage_time,
             "x_label":self.x_name,
-            "y_label":self.y_name
+            "y_label":self.y_name,
+            "output" : output
         }
         self.output = output
-        self.template = ndvi
+        self.template = ecmwf_1
         self._get_data()
 
     def _get_data(self):
         self.query = create_query(self)
-        #print self.query
         if self.output == "csv":
-            self.data = web_post(self.wcps_url, {"query":self.query})[1:-1]
+            self.data = web_post(self.wcps_url, {"query":self.query})#[1:-1]
         if self.output == "netcdf":
             self.data = web_post_file(self.wcps_url, {"query":self.query})
         if self.output == "gtiff":
@@ -41,16 +42,22 @@ class NDVI(Query):
             self.data = web_post_file(self.wcps_url, {"query":self.query})
 
 
-meeo_service = Service('https://eodataservice.org/rasdaman/ows')
+ecmwf_service = Service('http://earthserver.ecmwf.int/rasdaman/ows')
 
 
-meeo_area = NDVI(meeo_service, 4902991, 4917275, 377983, 390000, "2015-05-31T10:34:57Z" , "32631_30")
-# print meeo_area.data.shape
+temperature_array = Temp2MAvg(ecmwf_service, 30, 50, 5, 20, "2000-01-31T21:00","2002-01-31T21:00")
 # print meeo_area.data
 # print np.min(meeo_area.data)
 # print np.max(meeo_area.data)
-im = Image.open(cStringIO.StringIO(meeo_area.data))
-im.show()
-# plt.imshow(meeo_area.data)
-# plt.show()
+data_arr = np.array(temperature_array.data.split(','))
+plt.plot(data_arr)
+plt.show()
+# with open("meeo_output.tif",'w') as output_file:
+#     output_file.write(meeo_area.data)
 
+
+# Image.open( "meeo_output.tif" ).show()
+
+
+#Lat(30.000000:50.000000), Long(5.000000:20.000000
+#ansi("2000-01-31T21:00":"2002-01-31T21:00")
