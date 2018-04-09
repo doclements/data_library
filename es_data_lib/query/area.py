@@ -6,7 +6,7 @@ from es_data_lib.utils import create_query, web_post, web_post_file
 from es_data_lib.query.query import Query
 
 class Area(Query):
-    def __init__(self, service, lat1,lat2, lon1, lon2, coverage, output="csv",date=None):
+    def __init__(self, service, lat1,lat2, lon1, lon2, coverage, band='', output="csv",date=None):
         super(Area, self).__init__(service, coverage)
         self.template_params = {
             "lat1": lat1,
@@ -17,7 +17,8 @@ class Area(Query):
             "time_label":self.coverage_time,
             "x_label":self.x_name,
             "y_label":self.y_name,
-            "output": output
+            "output": output,
+            "band" : band
         }
         self.output = output
         if date is None:

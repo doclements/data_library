@@ -6,7 +6,7 @@ from es_data_lib.utils import create_query, web_post, web_post_file
 from es_data_lib.query.query import Query
 
 class AreaTimeseries(Query):
-    def __init__(self, service, lat1,lat2, lon1, lon2, start_date, end_date, coverage, output="csv"):
+    def __init__(self, service, lat1,lat2, lon1, lon2, start_date, end_date, coverage, band='',output="csv"):
         super(AreaTimeseries, self).__init__(service, coverage)
         self.template_params = {
             "lat1": lat1,
@@ -18,7 +18,8 @@ class AreaTimeseries(Query):
             "output": output,
             "time_label":self.coverage_time,
             "x_label":self.x_name,
-            "y_label":self.y_name
+            "y_label":self.y_name,
+            "band" : band
 
         }
         self.output = output

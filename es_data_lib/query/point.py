@@ -7,7 +7,7 @@ from es_data_lib.query.query import Query
 import sys
 
 class Point(Query):
-    def __init__(self, service, lat, lon, coverage, date=None):
+    def __init__(self, service, lat, lon, coverage, band='', date=None):
         super(Point, self).__init__(service, coverage)
         self.template_params = {
             "lat": lat,
@@ -15,7 +15,8 @@ class Point(Query):
             "date": date,
             "time_label":self.coverage_time,
             "x_label":self.x_name,
-            "y_label":self.y_name
+            "y_label":self.y_name,
+            "band": band
         }
         self.logger = logging.getLogger(__name__)
         if date is None:

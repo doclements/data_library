@@ -4,7 +4,7 @@ point_extraction = """
 for c in ({coverage})
 return
 encode (
-   c[{y_label}({lat}), {x_label}({lon}), {time_label}("{date}")], "csv"
+   c[{y_label}({lat}), {x_label}({lon}), {time_label}("{date}")]{band}, "csv"
 )
 """
 
@@ -12,14 +12,14 @@ point_extraction_no_date = """
 for c in ({coverage})
 return 
 encode (
-   c[{y_label}({lat}), {x_label}({lon})], "csv"
+   c[{y_label}({lat}), {x_label}({lon})]{band}, "csv"
 )
 """
 area_extraction_no_date = """
 for c in ({coverage})
 return
 encode (
-   c[{y_label}({lat1}:{lat2}), {x_label}({lon1}:{lon2})], "{output}"
+   c[{y_label}({lat1}:{lat2}), {x_label}({lon1}:{lon2})]{band}, "{output}"
 )
 """
 
@@ -27,14 +27,14 @@ area_extraction = """
 for c in ({coverage})
 return
 encode (
-   c[{y_label}({lat1}:{lat2}), {x_label}({lon1}:{lon2}), {time_label}("{date}")], "{output}"
+   c[{y_label}({lat1}:{lat2}), {x_label}({lon1}:{lon2}), {time_label}("{date}")]{band}, "{output}"
 )
 """
 point_extraction_timeseries = """
 for c in ({coverage})
 return 
 encode (
-   c[{y_label}({lat}), {x_label}({lon}), {time_label}("{date1}":"{date2}")], "csv"
+   c[{y_label}({lat}), {x_label}({lon}), {time_label}("{date1}":"{date2}")]{band}, "csv"
 )
 """
 area_timeseries_extraction = """

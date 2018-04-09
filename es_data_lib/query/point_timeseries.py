@@ -8,7 +8,7 @@ from es_data_lib.query.query import Query
 
 
 class PointTimeSeries(Query):
-    def __init__(self, service, lat, lon, start_date, end_date, coverage, output=None):
+    def __init__(self, service, lat, lon, start_date, end_date, coverage, band='',output=None):
         super(PointTimeSeries, self).__init__(service, coverage)
         self.template_params = {
             "lat": lat,
@@ -17,7 +17,8 @@ class PointTimeSeries(Query):
             "date1": start_date,
             "date2": end_date,
             "x_label":self.x_name,
-            "y_label":self.y_name
+            "y_label":self.y_name,
+            "band" : band
         }
         self.output = output
         self.template = point_extraction_timeseries
